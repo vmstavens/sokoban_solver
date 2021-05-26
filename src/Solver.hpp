@@ -1,3 +1,5 @@
+#pragma once
+
 #include <fstream>
 #include <vector>
 
@@ -9,13 +11,11 @@ namespace ss
 	class Solver
 	{
 	private:
-		Algorithm BreadthFirst;
-		Algorithm DepthFirst;
-		std::ifstream map;
-		std::vector<std::string> map;
 
 	public:
-		Solver(std::ifstream map);
+		Algorithm BreadthFirst;
+		Algorithm DepthFirst;
+		Solver();
 		~Solver();
 	};
 	

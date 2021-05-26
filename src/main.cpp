@@ -1,10 +1,12 @@
-#include "Solver.hpp"
+#include <iostream>
+
+// #include "Solver.hpp"
 
 
 int main(int argc, char const *argv[])
 {
-	ss::Solver solver();
-
+	
+	std::cout << "Hello, World" << std::endl;
 
 	return 0;
 }

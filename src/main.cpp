@@ -10,7 +10,6 @@ int main(int argc, char const *argv[])
 
 	solver.BreadthFirst.solve("maps/map1.txt");
 	
-
 	std::cout << "Hello, World" << std::endl;
 
 	return 0;

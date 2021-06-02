@@ -66,7 +66,7 @@ std::string DepthFirst::solve(std::string path_to_map)
 
 	/*
 	if (init.robot + up != wall or ) 
-
+		
 	if (init.down())
 
 	if (init.left())

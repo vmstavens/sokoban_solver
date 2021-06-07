@@ -6,9 +6,9 @@ class DepthFirst : Algorithm
 private:
 	/* data */
 public:
-	DepthFirst();
-	~DepthFirst();
+	DepthFirst() : Algorithm() {};
+	~DepthFirst() {};
 
-	std::string solve(std::string path_to_map);
+	inline std::string solve(std::string path_to_map) override {return "Hello2!";};
 };
 

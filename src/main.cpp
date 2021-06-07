@@ -1,17 +1,17 @@
 #include <iostream>
 
 #include "Solver.hpp"
-
+#include "Logger.hpp"
 
 int main(int argc, char const *argv[])
 {
 	
 	ss::Solver solver;
+	LOGGER->Log("program initiated...");
 
-	solver.BreadthFirst.solve("maps/map1.txt");
-	
-	std::cout << "Hello, World" << std::endl;
+	solver.breadthFirst.solve("maps/map1.txt");
 
 	return 0;
 }
+
 

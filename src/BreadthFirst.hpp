@@ -4,11 +4,14 @@
 class BreadthFirst : Algorithm
 {
 private:
-	/* data */
+	std::vector<std::string> m_cl_map;
+	std::vector<Position> m_cans_init;
+	std::vector<Position> m_goals_init;
+	Position m_robot_init;
 public:
-	BreadthFirst();
-	~BreadthFirst();
+	BreadthFirst() : Algorithm() {};
+	~BreadthFirst() {};
 
-	std::string solve(std::string path_to_map);
+	inline std::string solve(std::string path_to_map) override { return "Hello!"; };
 };
 

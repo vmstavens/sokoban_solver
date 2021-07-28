@@ -1,18 +1,19 @@
 #include <iostream>
 
 #include "Solver.hpp"
-
+#include "Logger.hpp"
 
 int main(int argc, char const *argv[])
 {
-	
+
+	LOGGER->clear();
+
 	ss::Solver solver;
 
-	solver.BreadthFirst.solve("maps/map1.txt");
-	
-
-	std::cout << "Hello, World" << std::endl;
+	LOGGER->Log("solving with BF...");
+	solver.breadthFirst.solve("maps/map1.txt");
 
 	return 0;
 }
+
 

@@ -4,11 +4,6 @@
 #include "Logger.hpp"
 #include "Position.hpp"
 
-
-DepthFirst::DepthFirst() { }
-
-DepthFirst::~DepthFirst() { }
-
 std::string DepthFirst::solve(std::string path_to_map)
 {
 
@@ -20,14 +15,14 @@ std::string DepthFirst::solve(std::string path_to_map)
 
 	// Generate map member (std::vector<std::string>)
 	std::string map_line;
-	std::ifstream fmap(path_to_map);
+	std::ifstream f_map(path_to_map);
 	std::vector<std::string> map;
 
-	if (fmap.is_open())
+	if (f_map.is_open())
 	{
-		while (std::getline(fmap, map_line))
+		while (std::getline(f_map, map_line))
 			map.push_back(map_line);
-		fmap.close();
+		f_map.close();
 		LOGGER->Log("map has been created from file");
 	}
 	 else
@@ -60,13 +55,13 @@ std::string DepthFirst::solve(std::string path_to_map)
 				continue;
 			}
 		}
-	
+	}
 	// root node
 	Node* init = new Node(map,robot,cans,goals);
 
 	/*
 	if (init.robot + up != wall or ) 
-
+		
 	if (init.down())
 
 	if (init.left())

@@ -1,3 +1,4 @@
+#pragma once
 
 #include "Algorithm.hpp"
 
@@ -6,9 +7,9 @@ class DepthFirst : Algorithm
 private:
 	/* data */
 public:
-	DepthFirst();
-	~DepthFirst();
+	DepthFirst() : Algorithm() {};
+	virtual ~DepthFirst() {};
 
-	std::string solve(std::string path_to_map);
+	virtual std::string solve(std::string path_to_map) override;
 };
 

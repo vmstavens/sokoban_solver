@@ -3,8 +3,8 @@
 #include <fstream>
 #include <vector>
 
-#include "Algorithm.hpp"
-
+#include "BreadthFirst.hpp"
+#include "DepthFirst.hpp"
 
 namespace ss
 {
@@ -13,8 +13,8 @@ namespace ss
 	private:
 
 	public:
-		Algorithm BreadthFirst;
-		Algorithm DepthFirst;
+		BreadthFirst breadthFirst;
+		DepthFirst depthFirst;
 		Solver();
 		~Solver();
 	};

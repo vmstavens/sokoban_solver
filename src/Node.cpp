@@ -165,7 +165,6 @@ std::string Node::backtraceSolution()
 	}
 
 	std::reverse(path.begin(),path.end());
-	LOGGER->Log("SOLUTION: " + path);
 	return path;
 }
 

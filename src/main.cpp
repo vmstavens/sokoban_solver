@@ -11,7 +11,7 @@ int main(int argc, char const *argv[])
 	ss::Solver solver;
 
 	LOGGER->Log("solving with BF...");
-	solver.breadthFirst.solve("maps/map1.txt");
+	solver.breadthFirst.solve("maps/harder_map.txt");
 
 	return 0;
 }

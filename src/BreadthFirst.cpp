@@ -1,5 +1,6 @@
 #include <iostream>
 #include <deque>
+#include <fstream>
 
 #include "BreadthFirst.hpp"
 #include "Logger.hpp"
@@ -103,7 +104,31 @@ std::string BreadthFirst::solve(std::string path_to_map)
 		current_node = node_queue[0];
 
 		if (current_node->isDone())
-			return current_node->backtraceSolution();
+		{
+			std::ofstream solution;
+
+			std::string absolute_solution = current_node->backtraceSolution();
+
+			// Write absolute solution to solutions/abs_solution.txt
+			solution.open("solutions/abs_solution.txt");
+			solution << absolute_solution;
+			solution.close();
+
+			// Write relative solution to solutions/rel_solution.txt
+			std::string relative_solution = abs2relSolution(absolute_solution);
+			solution.open("solutions/rel_solution.txt");
+			solution << relative_solution;
+			solution.close();
+
+			// Write optimized relative solution to solutions/opt_solution.txt
+			std::string optimized_solution = optimizeSolution(relative_solution);
+			solution.open("solutions/opt_solution.txt");
+			solution << optimized_solution;
+			solution.close();
+
+			LOGGER->Log("Solution written to solutions/opt_solution.txt");
+			return optimized_solution;
+		}
 
 		if (Node *up_node = current_node->move(Node::DIRECTION::UP); up_node != nullptr)
 		{
@@ -132,5 +157,6 @@ std::string BreadthFirst::solve(std::string path_to_map)
 
 		node_queue.pop_front();
 	}
-	return "";
+	LOGGER->Log("No solution found...");
+	return "NO SOLUTION FOUND...";
 }
